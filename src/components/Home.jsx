@@ -1,57 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
-
-const HomeSection = styled.section`
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 3rem;
-  background-color: #f4f4f4;
-`;
-
-const LeftContainer = styled.div`
-  flex: 1;
-  padding-right: 2rem;
-`;
-
-const RightContainer = styled.div`
-  flex: 1;
-`;
-
-const Image = styled.img`
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-`;
-
-const Title = styled.h1`
-  font-size: 3rem;
-  color: #333;
-`;
-
-const Description = styled.p`
-  font-size: 1.2rem;
-  color: #555;
-  margin-top: 1rem;
-`;
-
-const Home = () => {
-  return (
-    <HomeSection>
-      {/* Left side for image */}
-      <LeftContainer>
-        <Image src="https://png.pngtree.com/png-clipart/20230913/original/pngtree-coder-clipart-boy-working-with-computer-game-on-the-desk-vector-png-image_11072679.png" alt="My image" />
-      </LeftContainer>
-
-      {/* Right side for description */}
-      <RightContainer>
-        <Title>Welcome to My Portfolio</Title>
-        <Description>
-          Hello! I'm Nitish, Having strong Background Of Engineering From NIT DELHI passionate web developer with expertise in creating responsive and dynamic websites. Explore my work and feel free to reach out.
-        </Description>
-      </RightContainer>
-    </HomeSection>
-  );
-};
-
-export default Home;
+import React,{useEffect,useState} from "react";
+export default function Home(){const roles=["Full-Stack Developer","Backend Engineer","AI Builder"];const[i,setI]=useState(0);const[t,setT]=useState("");useEffect(()=>{let n=0;const x=setInterval(()=>{setT(roles[i].slice(0,++n));if(n===roles[i].length){clearInterval(x);setTimeout(()=>setI(v=>(v+1)%roles.length),1200)}},65);return()=>clearInterval(x)},[i]);return <section id="home" className="hero section"><div className="reveal"><p className="eyebrow">NIT DELHI · SOFTWARE ENGINEER</p><h1>Building products that<br/><em>solve real problems.</em></h1><p className="role-line">{t}<b>_</b></p><p className="hero-text">I build scalable web applications, backend systems and AI-powered products with a focus on clean engineering and measurable impact.</p><div className="actions"><a className="button primary" href="#projects">Explore my work ↗</a><a className="button ghost" href="https://cvwallah.in" target="_blank" rel="noreferrer">Try CVWallah ↗</a></div><div className="stats"><div><strong>1000+</strong><span>DSA Problems</span></div><div><strong>10K+</strong><span>Resumes Processed</span></div><div><strong>3+</strong><span>Major Projects</span></div></div></div><div className="hero-card reveal delay"><div className="terminal"><div className="terminal-bar"><i/><i/><i/><span>nitish.dev</span></div><pre>{`const engineer = {
+  name: "Nitish",
+  focus: ["Backend", "AI", "Systems"],
+  stack: ["React", "Node", "MongoDB"],
+  status: "Open to SDE-1"
+};`}</pre><div className="terminal-footer">learn(); build(); ship(); 🚀</div></div><div className="availability"><span/> Open to SDE-1 opportunities</div></div></section>}
